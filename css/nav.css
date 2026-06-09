@@ -1,0 +1,58 @@
+/* Shared fixed nav bar — used on every page */
+
+#site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 14px clamp(20px, 5vw, 56px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 125%;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  text-decoration: none;
+  transition: text-shadow var(--dur-fast) var(--ease-out-quart);
+}
+
+.nav-logo:hover {
+  text-shadow: 0 0 16px rgba(79, 142, 247, 0.7);
+}
+
+.nav-links {
+  display: flex;
+  gap: clamp(18px, 3vw, 40px);
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  color: var(--muted);
+  text-decoration: none;
+  font-size: var(--text-label);
+  letter-spacing: 0.02em;
+  transition: color var(--dur-fast) var(--ease-out-quart),
+              text-shadow var(--dur-fast) var(--ease-out-quart);
+}
+
+.nav-link:hover,
+.nav-active {
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(79, 142, 247, 0.7);
+}

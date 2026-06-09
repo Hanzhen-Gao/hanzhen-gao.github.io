@@ -1,0 +1,63 @@
+/* ============ CONTACT PAGE ============ */
+
+.contact-intro {
+  font-size: 1.1rem;
+  color: var(--subtle);
+  max-width: 52ch;
+  margin-bottom: 48px;
+  line-height: 1.8;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 520px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease-out-quart),
+              box-shadow var(--dur-med) var(--ease-out-quart),
+              transform var(--dur-med) var(--ease-out-quart);
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  box-shadow: var(--glow-blue);
+  transform: translateX(4px);
+}
+
+.contact-link-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  min-width: 56px;
+}
+
+.contact-link-text {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  color: var(--text);
+  flex: 1;
+  word-break: break-all;
+}
+
+.contact-link-arrow {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  transition: transform var(--dur-fast) var(--ease-out-quart);
+}
+
+.contact-link:hover .contact-link-arrow {
+  transform: translateX(4px);
+}
