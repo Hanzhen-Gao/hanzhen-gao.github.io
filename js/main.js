@@ -6,7 +6,7 @@ import { renderProjects } from "./sections/projects.js";
 import { renderContact }  from "./sections/contact.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderHeader(site.identity, site.nav);
+  renderHeader(site);
   renderAbout(site.about);
   renderSkills(site.skills);
   renderProjects(site.projects);

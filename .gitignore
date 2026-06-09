@@ -1,0 +1,5 @@
+# Claude Code skill installation (tooling, not site content)
+.claude/
+
+# Impeccable live-mode runtime state
+.impeccable/live/sessions/

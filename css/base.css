@@ -4,41 +4,101 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
+  font-size: var(--text-body);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Cyberpunk screen layer: corner neon bloom + faint scan grid, fixed behind content */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(55vw 55vw at 8% -10%, rgba(79, 142, 247, 0.13), transparent 60%),
+    radial-gradient(48vw 48vw at 100% 4%, rgba(123, 94, 248, 0.12), transparent 55%),
+    radial-gradient(60vw 50vw at 90% 100%, rgba(79, 142, 247, 0.07), transparent 60%),
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 46px 46px, 46px 46px;
 }
 
 main {
-  max-width: 760px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: clamp(40px, 6vw, 80px) clamp(24px, 5vw, 56px) clamp(64px, 9vh, 110px);
 }
 
+/* Asymmetric section grid: sticky title column on the left, content on the right */
 section {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.55fr) minmax(0, 2.2fr);
+  gap: clamp(20px, 4vw, 56px);
+  align-items: start;
   margin-bottom: var(--section-gap);
+  scroll-margin-top: 96px;
+}
+
+.section-head {
+  position: sticky;
+  top: 96px;
 }
 
 section h2 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 20px;
+  position: relative;
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: 800;
+  font-stretch: 125%;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
   color: var(--text);
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ffffff12;
+  padding-bottom: 14px;
+  text-wrap: balance;
 }
 
-section p {
-  color: var(--subtle);
-  font-size: 1rem;
+/* Neon underline accent — a short glowing rule, not a full divider */
+section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 56px;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 14px rgba(79, 142, 247, 0.85);
 }
 
 footer {
   text-align: center;
-  padding: 30px 24px;
+  padding: 40px 24px;
+  font-family: var(--font-mono);
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: var(--text-label);
+  letter-spacing: 0.03em;
   border-top: 1px solid var(--border);
+}
+
+@media (max-width: 760px) {
+  section {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .section-head {
+    position: static;
+    top: auto;
+  }
 }

@@ -1,13 +1,25 @@
-export function renderSkills({ heading, items }) {
-  const tags = items
-    .map((skill) => `<span class="skill-tag">${skill}</span>`)
-    .join("\n      ");
+export function renderSkills({ heading, groups }) {
+  const groupsHTML = groups
+    .map(
+      ({ name, items }) => `
+      <div class="skill-group">
+        <h3 class="skill-group-name">${name}</h3>
+        <div class="skill-grid">
+          ${items
+            .map((skill) => `<span class="skill-tag">${skill}</span>`)
+            .join("\n          ")}
+        </div>
+      </div>`
+    )
+    .join("\n");
 
   const el = document.querySelector("#skills");
   el.innerHTML = `
-    <h2>${heading}</h2>
-    <div class="skill-grid">
-      ${tags}
+    <div class="section-head">
+      <h2>${heading}</h2>
+    </div>
+    <div class="section-body skill-groups">
+      ${groupsHTML}
     </div>
   `;
 }

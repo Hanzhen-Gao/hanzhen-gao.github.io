@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-09T00:00:00Z",
+  "title": "Design System: Hanzhen Gao",
+  "extensions": {
+    "colorMeta": {
+      "electric-blue": {
+        "role": "primary",
+        "displayName": "Electric Blue",
+        "canonical": "oklch(61% 0.175 257)",
+        "tonalRamp": ["oklch(15% 0.07 257)", "oklch(25% 0.11 257)", "oklch(35% 0.14 257)", "oklch(45% 0.16 257)", "oklch(55% 0.175 257)", "oklch(65% 0.17 257)", "oklch(78% 0.13 257)", "oklch(92% 0.06 257)"]
+      },
+      "neon-orchid": {
+        "role": "secondary",
+        "displayName": "Neon Orchid",
+        "canonical": "oklch(53% 0.24 287)",
+        "tonalRamp": ["oklch(15% 0.09 287)", "oklch(25% 0.14 287)", "oklch(35% 0.18 287)", "oklch(45% 0.22 287)", "oklch(55% 0.24 287)", "oklch(65% 0.22 287)", "oklch(78% 0.16 287)", "oklch(92% 0.07 287)"]
+      },
+      "ink-depth": {
+        "role": "neutral",
+        "displayName": "Ink Depth",
+        "canonical": "oklch(9% 0.010 265)",
+        "tonalRamp": ["oklch(9% 0.010 265)", "oklch(15% 0.012 265)", "oklch(25% 0.015 265)", "oklch(38% 0.018 265)", "oklch(52% 0.018 265)", "oklch(65% 0.015 265)", "oklch(80% 0.010 265)", "oklch(94% 0.005 265)"]
+      },
+      "studio-dark": {
+        "role": "neutral",
+        "displayName": "Studio Dark",
+        "canonical": "oklch(14% 0.015 265)",
+        "tonalRamp": ["oklch(9% 0.010 265)", "oklch(14% 0.015 265)", "oklch(24% 0.018 265)", "oklch(36% 0.020 265)", "oklch(50% 0.020 265)", "oklch(64% 0.016 265)", "oklch(80% 0.010 265)", "oklch(94% 0.005 265)"]
+      },
+      "studio-ash": {
+        "role": "neutral",
+        "displayName": "Studio Ash",
+        "canonical": "oklch(92% 0.012 265)",
+        "tonalRamp": ["oklch(20% 0.014 265)", "oklch(33% 0.016 265)", "oklch(46% 0.017 265)", "oklch(59% 0.016 265)", "oklch(71% 0.015 265)", "oklch(81% 0.014 265)", "oklch(90% 0.013 265)", "oklch(96% 0.007 265)"]
+      },
+      "light-ash": {
+        "role": "neutral",
+        "displayName": "Light Ash",
+        "canonical": "oklch(74% 0.024 270)",
+        "tonalRamp": ["oklch(15% 0.010 270)", "oklch(28% 0.015 270)", "oklch(40% 0.019 270)", "oklch(52% 0.022 270)", "oklch(63% 0.024 270)", "oklch(74% 0.024 270)", "oklch(84% 0.018 270)", "oklch(94% 0.009 270)"]
+      },
+      "faded-ash": {
+        "role": "neutral",
+        "displayName": "Faded Ash",
+        "canonical": "oklch(55% 0.030 270)",
+        "tonalRamp": ["oklch(15% 0.012 270)", "oklch(26% 0.018 270)", "oklch(37% 0.023 270)", "oklch(47% 0.028 270)", "oklch(55% 0.030 270)", "oklch(65% 0.028 270)", "oklch(76% 0.022 270)", "oklch(90% 0.011 270)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display — Archivo Expanded", "purpose": "Latin headlines at font-stretch 125% + 800 weight. Hero name, section titles, project names. CJK falls through to Noto Sans SC." },
+      "body": { "displayName": "Body — Noto Sans SC", "purpose": "Bilingual body copy (Chinese + Latin). 65ch line-length cap." },
+      "label": { "displayName": "Label — JetBrains Mono", "purpose": "Technical labels, links, tags, info rows, tagline. The earned-mono signal." }
+    },
+    "shadows": [
+      { "name": "glow-blue", "value": "0 0 32px rgba(79, 142, 247, 0.30)", "purpose": "Interactive glow on cards, contact blocks, links (hover)." },
+      { "name": "glow-blue-strong", "value": "0 0 64px rgba(79, 142, 247, 0.45)", "purpose": "Primary CTA button hover." },
+      { "name": "hero-glow", "value": "text-shadow: 0 0 38px rgba(79,142,247,0.42), 0 0 80px rgba(123,94,248,0.22)", "purpose": "The hero name's single sanctioned resting glow." },
+      { "name": "panel-glow", "value": "0 0 32px rgba(79,142,247,0.30), 0 24px 60px rgba(0,0,0,0.45)", "purpose": "Lifts the frosted hero status panel off the canvas." }
+    ],
+    "motion": [
+      { "name": "ease-out-quart", "value": "cubic-bezier(0.25, 1, 0.5, 1)", "purpose": "Default easing for hover and state transitions." },
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Larger composition and entrance easing." },
+      { "name": "duration-fast", "value": "200ms", "purpose": "Hover/state transitions (color, border, text-shadow)." },
+      { "name": "duration-medium", "value": "400ms", "purpose": "Lift/translate transitions on cards and blocks." }
+    ],
+    "breakpoints": [
+      { "name": "section-collapse", "value": "760px" },
+      { "name": "hero-collapse", "value": "880px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Hero Status Panel",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature frosted card anchoring the hero's right column: identity, terminal-style info rows, social links.",
+      "html": "<aside class=\"ds-panel\"><div class=\"ds-panel-head\"><div class=\"ds-avatar\">HG</div><div class=\"ds-panel-id\"><span class=\"ds-panel-name\">Gao Hanzhen</span><span class=\"ds-panel-status\"><i></i>开放新机会</span></div></div><dl class=\"ds-panel-info\"><div><dt>专注</dt><dd>前端 · 自动化</dd></div><div><dt>坐标</dt><dd>China</dd></div></dl><div class=\"ds-panel-links\"><a href=\"#\">邮箱</a><a href=\"#\">GitHub</a></div></aside>",
+      "css": ".ds-panel { background: rgba(18,21,31,0.62); backdrop-filter: blur(16px) saturate(150%); border: 1px solid #ffffff14; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 22px; box-shadow: 0 0 32px rgba(79,142,247,0.3), 0 24px 60px rgba(0,0,0,0.45); max-width: 320px; } .ds-panel-head { display: flex; align-items: center; gap: 16px; } .ds-avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg,#4f8ef7,#7b5ef8); display: inline-flex; align-items: center; justify-content: center; font-family: 'Archivo',sans-serif; font-weight: 800; font-stretch: 125%; color: #fff; box-shadow: 0 0 28px rgba(123,94,248,0.55); } .ds-panel-id { display: flex; flex-direction: column; gap: 4px; } .ds-panel-name { font-weight: 700; color: #e4e6f0; font-family: 'Noto Sans SC',sans-serif; } .ds-panel-status { font-family: 'JetBrains Mono',monospace; font-size: 0.78rem; color: #b0b4cc; display: inline-flex; align-items: center; } .ds-panel-status i { width: 7px; height: 7px; border-radius: 50%; background: #4f8ef7; box-shadow: 0 0 8px #4f8ef7; margin-right: 8px; } .ds-panel-info { display: flex; flex-direction: column; gap: 11px; border-top: 1px solid #ffffff10; border-bottom: 1px solid #ffffff10; padding: 18px 0; margin: 0; } .ds-panel-info div { display: flex; justify-content: space-between; font-family: 'JetBrains Mono',monospace; font-size: 0.82rem; } .ds-panel-info dt { color: #7a7f99; } .ds-panel-info dd { color: #e4e6f0; margin: 0; } .ds-panel-links { display: flex; gap: 18px; } .ds-panel-links a { font-family: 'JetBrains Mono',monospace; font-size: 0.85rem; color: #4f8ef7; text-decoration: none; }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Hero primary CTA. Electric Blue fill, near-black text, blue glow on hover.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">查看项目 →</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono',monospace; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em; padding: 13px 24px; border-radius: 8px; background: #4f8ef7; color: #06080f; border: 1px solid #4f8ef7; text-decoration: none; transition: box-shadow 0.2s cubic-bezier(0.25,1,0.5,1), transform 0.2s cubic-bezier(0.25,1,0.5,1); } .ds-btn-primary:hover { box-shadow: 0 0 64px rgba(79,142,247,0.45); transform: translateY(-2px); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Hero secondary CTA. Transparent with ghost border, neon on hover.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">联系我</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono',monospace; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em; padding: 13px 24px; border-radius: 8px; background: transparent; color: #e4e6f0; border: 1px solid #ffffff14; text-decoration: none; transition: all 0.2s cubic-bezier(0.25,1,0.5,1); } .ds-btn-ghost:hover { border-color: #4f8ef7; color: #4f8ef7; box-shadow: 0 0 18px rgba(79,142,247,0.2); transform: translateY(-2px); }"
+    },
+    {
+      "name": "Skill Tag",
+      "kind": "chip",
+      "refersTo": "skill-tag",
+      "description": "Mono technical tag inside a domain-grouped cluster. Neon edge on hover.",
+      "html": "<span class=\"ds-skill-tag\">JavaScript</span>",
+      "css": ".ds-skill-tag { display: inline-block; background: #1a1d27; border: 1px solid #ffffff14; border-radius: 6px; padding: 7px 15px; font-family: 'JetBrains Mono',monospace; font-size: 0.85rem; font-weight: 500; color: #e4e6f0; transition: border-color 0.2s, color 0.2s, box-shadow 0.2s; } .ds-skill-tag:hover { border-color: #4f8ef7; color: #4f8ef7; box-shadow: 0 0 16px rgba(79,142,247,0.22); }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Portfolio card in an auto-fit grid: name, description, technical tags, action link. Neon glow + lift on hover.",
+      "html": "<article class=\"ds-card\"><h3>farmKing</h3><p>农业管理方向的项目，用来记录与组织农场作业流程。</p><ul class=\"ds-tags\"><li>JavaScript</li><li>Web</li></ul><a href=\"#\">查看项目 →</a></article>",
+      "css": ".ds-card { display: flex; flex-direction: column; background: #1a1d27; border: 1px solid #ffffff10; border-radius: 12px; padding: 24px; max-width: 340px; transition: border-color 0.2s cubic-bezier(0.25,1,0.5,1), box-shadow 0.4s cubic-bezier(0.25,1,0.5,1), transform 0.4s cubic-bezier(0.25,1,0.5,1); } .ds-card:hover { border-color: #4f8ef7; box-shadow: 0 0 32px rgba(79,142,247,0.3), inset 0 0 0 1px rgba(79,142,247,0.25); transform: translateY(-4px); } .ds-card h3 { font-family: 'Archivo',sans-serif; font-weight: 700; font-stretch: 110%; letter-spacing: -0.01em; color: #e4e6f0; margin: 0 0 10px; } .ds-card p { font-size: 0.92rem; color: #b0b4cc; line-height: 1.6; margin: 0 0 18px; flex: 1; font-family: 'Noto Sans SC',sans-serif; } .ds-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; padding: 0; } .ds-tags li { font-family: 'JetBrains Mono',monospace; font-size: 0.72rem; color: #b0b4cc; padding: 4px 10px; border: 1px solid #ffffff14; border-radius: 5px; } .ds-card a { font-family: 'JetBrains Mono',monospace; font-size: 0.85rem; color: #4f8ef7; text-decoration: none; align-self: flex-start; }"
+    },
+    {
+      "name": "Contact Link Block",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Full-width contact link: label + value + arrow. Border neon + translateX on hover.",
+      "html": "<a class=\"ds-contact\" href=\"#\"><span class=\"ds-contact-label\">邮箱</span><span class=\"ds-contact-text\">gaohanzhen00@gmail.com</span><span class=\"ds-contact-arrow\">→</span></a>",
+      "css": ".ds-contact { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border: 1px solid #ffffff10; border-radius: 10px; background: #1a1d27; text-decoration: none; max-width: 420px; transition: border-color 0.2s, box-shadow 0.4s, transform 0.4s; } .ds-contact:hover { border-color: #4f8ef7; box-shadow: 0 0 32px rgba(79,142,247,0.3); transform: translateX(4px); } .ds-contact-label { font-family: 'JetBrains Mono',monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: #7a7f99; min-width: 56px; } .ds-contact-text { font-family: 'JetBrains Mono',monospace; font-size: 0.85rem; color: #e4e6f0; flex: 1; } .ds-contact-arrow { color: #4f8ef7; font-family: 'JetBrains Mono',monospace; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Fixed frosted-glass top bar. Faded Ash links, neon glow on hover.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#about\">关于</a><a href=\"#skills\">技能</a><a href=\"#projects\">项目</a><a href=\"#contact\">联系</a></nav>",
+      "css": ".ds-nav { display: flex; justify-content: center; gap: 32px; padding: 14px 40px; background: rgba(18,21,31,0.62); backdrop-filter: blur(14px) saturate(160%); border-bottom: 1px solid #ffffff10; } .ds-nav a { font-family: 'JetBrains Mono',monospace; color: #7a7f99; text-decoration: none; font-size: 0.85rem; letter-spacing: 0.02em; transition: color 0.2s, text-shadow 0.2s; } .ds-nav a:hover { color: #4f8ef7; text-shadow: 0 0 12px rgba(79,142,247,0.7); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Electric Canvas",
+    "overview": "An art school graduate's digital atelier: deep-space dark backgrounds charged with electric blue and violet neon, surfaces that float rather than anchor, compositions that break the center axis on purpose. The layout is built on a two-column hero (lead + frosted status panel) and an asymmetric section grid with a sticky title column, never a centered top-to-bottom stack. This is work that makes a case through its own visual confidence.\n\nThe system rests on a single deep background layer (Ink Depth) with one luminous surface layer (Studio Dark), tied together by two neon accents: Electric Blue for interaction, Neon Orchid for gradients only. Ghost borders define edges without mass; glow is the only shadow.\n\nIt explicitly rejects: clean white Apple-style minimalism, flat SaaS enterprise layouts, warm cream tones, and academic resume formatting.",
+    "keyCharacteristics": [
+      "Two-column hero: lead (name, intro, CTAs) + frosted status panel",
+      "Asymmetric section grid with a sticky left title column",
+      "Dual neon accents with strict roles: Electric Blue interaction, Neon Orchid gradients only",
+      "Glow is the only shadow; the hero name's resting glow is the single exception",
+      "Industrial-poster type: Archivo expanded headlines, Noto Sans SC body, JetBrains Mono labels",
+      "Glass reserved for two floating layers: nav bar and hero panel"
+    ],
+    "rules": [
+      { "name": "The No-Warm Rule", "body": "No warm-tinted neutrals anywhere. Beige, sand, cream, parchment prohibited at any opacity. Every neutral stays cool-blue-shifted.", "section": "colors" },
+      { "name": "The Two-Signal Rule", "body": "Electric Blue is the primary interaction signal. Neon Orchid is structural, appearing only inside gradients alongside Electric Blue.", "section": "colors" },
+      { "name": "The Expanded-Headline Rule", "body": "All Latin display and headline type is pushed to font-stretch 125%. The width is the signature, not a decoration.", "section": "typography" },
+      { "name": "The Mono-Is-Earned Rule", "body": "Monospace is reserved for genuinely technical content (skill names, labels, URLs, the developer tagline). Never for Chinese prose or as decorative texture.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Static section surfaces are flat at rest; depth comes from tone and border. Glow appears on interaction, with one exception.", "section": "elevation" },
+      { "name": "The Hero Glow Exception", "body": "The hero name carries a resting neon glow as the page's single focal moment. It is the only static glow; every other glow must be earned by interaction.", "section": "elevation" },
+      { "name": "The Frosted Glass Exception", "body": "backdrop-filter: blur is reserved for exactly two floating surfaces: the fixed nav bar and the hero status panel. All other surfaces stay solid.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Electric Blue for all links, hover states, and interactive signals.",
+      "Do use Ghost Borders (1px #ffffff10 to #ffffff14) as the default edge treatment.",
+      "Do activate neon on hover: border-color to Electric Blue + glow is the canonical signal.",
+      "Do treat motion as part of the visual language: entrance animations and hover transitions are expected.",
+      "Do use asymmetric composition deliberately: two-column hero, sticky title-column section grid.",
+      "Do reserve glass for the nav bar and hero panel; keep cards, tags, and contact blocks solid.",
+      "Do keep all neutrals cool-blue-shifted.",
+      "Do group skills by domain and give projects technical tags + an action link."
+    ],
+    "donts": [
+      "Don't use warm beige, cream, sand, parchment, or ivory tones anywhere.",
+      "Don't design for white-background Apple-style minimalism.",
+      "Don't build a flat SaaS enterprise layout or a centered top-to-bottom stack.",
+      "Don't use academic or resume formatting.",
+      "Don't apply glassmorphism to static card or section surfaces (nav + hero panel only).",
+      "Don't use box-shadow as ambient decoration; glow is for interaction (hero name excepted).",
+      "Don't use Neon Orchid as a standalone flat accent color.",
+      "Don't use background-clip: text with gradient backgrounds for text coloring."
+    ]
+  }
+}
